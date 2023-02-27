@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 
-export type HttpExceptionRes = {
+type HttpExceptionRes = {
   statusCode: number;
   message: any;
   error: string;
