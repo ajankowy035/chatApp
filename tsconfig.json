@@ -22,7 +22,8 @@
       "@Health/*": ["src/health/*"],
       "@Chat/*": ["src/chat/*"],
       "@Websocket/*": ["src/websocket/*"],
-      "@Migrations/*": ["src/migrations/*"]
+      "@Migrations/*": ["src/migrations/*"],
+      "@Users/*": ["src/users/*"]
     }
   }
 }

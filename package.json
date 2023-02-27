@@ -83,7 +83,8 @@
       "@Health/(.*)": "<rootDir>/health/$1",
       "@Chat/(.*)": "<rootDir>/chat/$1",
       "@Websocket/(.*)": "<rootDir>/websocket/$1",
-      "@Migrations/(.*)": "<rootDir>/migrations/$1"
+      "@Migrations/(.*)": "<rootDir>/migrations/$1",
+      "@Users/(.*)": "<rootDir>/users/$1"
     }
   }
 }
