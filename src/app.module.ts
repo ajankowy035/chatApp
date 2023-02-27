@@ -1,10 +1,10 @@
-import { EventsModule } from './websocket/adapters/events.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ormConfig } from '@Infrastructure/database/typeorm.config';
-import { HealthModule } from '@Health/health.module';
 import { ChatModule } from '@Chat/chat.module';
+import { HealthModule } from '@Health/health.module';
+import { ormConfig } from '@Infrastructure/database/typeorm.config';
+import { EventsModule } from '@Websocket/adapters/events.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
