@@ -1,13 +1,8 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Chat {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
@@ -16,6 +11,6 @@ export class Chat {
   @Column({ unique: true })
   content: string;
 
-  @CreateDateColumn()
+  @Column()
   createdAt: Date;
 }
