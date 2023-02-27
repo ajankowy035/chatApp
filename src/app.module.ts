@@ -7,6 +7,7 @@ import { ormConfig } from '@Infrastructure/database/typeorm.config';
 import { EventsModule } from '@Websocket/adapters/events.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AppService } from './app.service';
     HealthModule,
     ChatModule,
     EventsModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

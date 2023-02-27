@@ -1,14 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class ChatDto {
+export class CreateUserDto {
   @ApiProperty()
-  id: number;
+  password: string;
 
   @ApiProperty()
-  content: string;
-
-  @ApiProperty()
-  createdAt: Date;
+  username: string;
 
   @ApiProperty()
   email: string;

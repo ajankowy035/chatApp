@@ -31,7 +31,9 @@
     "@nestjs/terminus": "^9.2.1",
     "@nestjs/typeorm": "^9.0.1",
     "@nestjs/websockets": "^9.3.9",
+    "@types/bcrypt": "^5.0.0",
     "axios": "^1.3.4",
+    "bcrypt": "^5.1.0",
     "pg": "^8.9.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
@@ -83,7 +85,8 @@
       "@Health/(.*)": "<rootDir>/health/$1",
       "@Chat/(.*)": "<rootDir>/chat/$1",
       "@Websocket/(.*)": "<rootDir>/websocket/$1",
-      "@Migrations/(.*)": "<rootDir>/migrations/$1"
+      "@Migrations/(.*)": "<rootDir>/migrations/$1",
+      "@Users/(.*)": "<rootDir>/users/$1"
     }
   }
 }

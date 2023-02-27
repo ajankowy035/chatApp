@@ -26,6 +26,7 @@ export class EventsGateway
     payload: CreateChatModel,
   ): Promise<void> {
     await this.createMessage.create(payload);
+    client.emit('newMessage', payload);
   }
 
   afterInit(server: Server) {

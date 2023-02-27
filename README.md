@@ -2,7 +2,12 @@
 
 technologies: [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.<br />
 architecture: implementation of Domain Driven Development - Hexagonal Architecture <br />
-author: Agnieszka Jankowy
+author: Agnieszka Jankowy <br />
+documentation: API endpoint /documentation
+
+## Enviroment
+
+As the first step Copy the content of the example.env file to the .env file and fill it with desired values.
 
 ## Installation
 
@@ -35,10 +40,4 @@ $ yarn run start:prod
 ```bash
 # unit tests
 $ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
 ```
