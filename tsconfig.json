@@ -19,7 +19,8 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@Infrastructure/*": ["./src/infrastructure/*"],
-      "@Health/*": ["src/health/*"]
+      "@Health/*": ["src/health/*"],
+      "@Chat/*": ["src/chat/*"]
     }
   }
 }
