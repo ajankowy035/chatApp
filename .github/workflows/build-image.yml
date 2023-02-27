@@ -8,6 +8,6 @@ jobs:
 
     steps:
       - name: Build image
-        run: docker build . --file Dockerfile --tag chatApp:$(date +%s)
+        run: docker build . --file Dockerfile --tag chat_app:$(date +%s)
         env:
           PORT: $PORT
