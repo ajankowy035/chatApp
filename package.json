@@ -26,13 +26,17 @@
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/platform-socket.io": "^9.3.9",
+    "@nestjs/swagger": "^6.2.1",
     "@nestjs/terminus": "^9.2.1",
     "@nestjs/typeorm": "^9.0.1",
+    "@nestjs/websockets": "^9.3.9",
     "axios": "^1.3.4",
     "pg": "^8.9.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "socket.io": "^4.6.1",
     "typeorm": "^0.3.12"
   },
   "devDependencies": {
@@ -77,7 +81,8 @@
     "moduleNameMapper": {
       "@Infrastructure/(.*)": "<rootDir>/infrastructure/$1",
       "@Health/(.*)": "<rootDir>/health/$1",
-      "@Chat/(.*)": "<rootDir>/chat/$1"
+      "@Chat/(.*)": "<rootDir>/chat/$1",
+      "@Websocket/(.*)": "<rootDir>/websocket/$1"
     }
   }
 }
