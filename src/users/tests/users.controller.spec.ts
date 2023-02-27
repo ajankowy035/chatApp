@@ -18,7 +18,7 @@ describe('User Controller Test', () => {
   });
 
   describe('User manipulations', () => {
-    it('Should create new user', async () => {
+    it('Should create new user with hashedPassword', async () => {
       const email = 'email@email.com';
       const password = 'xxx';
       const username = 'testUserName';
@@ -28,7 +28,7 @@ describe('User Controller Test', () => {
 
       expect(user.email).toBe(email);
       expect(user.username).toBe(username);
-      expect(user.password).toBe(password);
+      expect(user.password).not.toBe(password);
       expect(user.createdAt).toBeDefined();
       expect(user.updatedAt).toBeDefined();
       expect(user.id).toBeDefined();
