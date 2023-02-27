@@ -8,6 +8,6 @@ jobs:
 
     steps:
       - name: Build image
-        run: docker build . --file Dockerfile
+        run: docker build .
         env:
           PORT: $PORT
