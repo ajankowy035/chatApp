@@ -2,7 +2,7 @@
 
 technologies: [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.<br />
 architecture: implementation of Domain Driven Development - Hexagonal Architecture <br />
-author: Agnieszka Jankowy
+author: Agnieszka Jankowy <br />
 documentation: API endpoint /documentation
 
 ## Enviroment
