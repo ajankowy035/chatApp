@@ -11,7 +11,7 @@ export class ChatController {
   @Get()
   @ApiResponse({
     status: 200,
-    description: 'Lists groups with subjects for provided schoolYear',
+    description: 'Lists all messages',
     type: [ChatDto],
   })
   getAllMessages(): Promise<ChatDto[]> {
