@@ -25,7 +25,7 @@ describe('User Controller Test', () => {
     usersRepo = app.get<InMemoryUserRepository>(InMemoryUserRepository);
   });
 
-  describe('User', () => {
+  describe('User manipulations', () => {
     it('Should create new user', async () => {
       const email = 'email@email.com';
       const password = 'xxx';
@@ -56,6 +56,12 @@ describe('User Controller Test', () => {
       expect(result.id).toBeDefined();
       expect(result.updatedAt).toBeDefined();
       expect(result.createdAt).toBeDefined();
+    });
+
+    it('Should throw a 404 error when try to get not existing user', async () => {
+      await usersController
+        .getSingleUser(342787243)
+        .catch((err) => expect(err.response.statusCode).toBe(404));
     });
   });
 });
