@@ -1,5 +1,6 @@
-import { join } from 'path';
+import { CreateChatTable1677501108379 } from './../../migrations/1677501108379-CreateChatTable';
 import { DataSource, DataSourceOptions } from 'typeorm';
+import { Chat } from '@Chat/adapters/entities/chat.entity';
 
 export const ormConfig: DataSourceOptions = {
   type: 'postgres',
@@ -8,8 +9,8 @@ export const ormConfig: DataSourceOptions = {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_EXTERNAL_PORT,
-  entities: [],
-  migrations: [join(__dirname, 'migrations', '*.{ts,js}')],
+  entities: [Chat],
+  migrations: [CreateChatTable1677501108379],
   migrationsRun: true,
   synchronize: false,
   logging: true,
