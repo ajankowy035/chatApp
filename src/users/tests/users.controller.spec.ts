@@ -1,28 +1,20 @@
-import { TestingModule, Test } from '@nestjs/testing';
-import { CreateUserUseCase } from './../domain/usecase/createUser.usecase';
-import { GetUserUseCase } from './../domain/usecase/getUser.usecase';
+import { TestingModule } from '@nestjs/testing';
 import { InMemoryUserRepository } from './../adapters/repositories/inMemoryUser.repository';
 import { UsersController } from './../adapters/api/users.controller';
+import { createTestingModule } from './createTestingModule';
 import { UserRepository } from '../domain/ports/userRepository.port';
-import { GetUser } from '../domain/ports/getUser.port';
-import { CreateUser } from '../domain/ports/createUser.port';
 
 describe('User Controller Test', () => {
   let usersController: UsersController;
   let usersRepo: InMemoryUserRepository;
 
-  beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
-      controllers: [UsersController],
-      providers: [
-        { provide: UserRepository, useClass: InMemoryUserRepository },
-        { provide: GetUser, useClass: GetUserUseCase },
-        { provide: CreateUser, useClass: CreateUserUseCase },
-      ],
-    }).compile();
+  beforeAll(async () => {
+    const app: TestingModule = await createTestingModule().compile();
 
     usersController = app.get<UsersController>(UsersController);
-    usersRepo = app.get<InMemoryUserRepository>(InMemoryUserRepository);
+    usersRepo = app.get<UserRepository>(
+      UserRepository,
+    ) as InMemoryUserRepository;
   });
 
   describe('User manipulations', () => {
@@ -32,7 +24,7 @@ describe('User Controller Test', () => {
       const username = 'testUserName';
 
       await usersController.cerateNewUser({ email, password, username });
-      const user = usersRepo[0];
+      const user = usersRepo.data[0];
 
       expect(user.email).toBe(email);
       expect(user.username).toBe(username);
