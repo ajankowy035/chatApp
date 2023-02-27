@@ -1,6 +1,6 @@
-import { CreateChatTable1677501108379 } from './../../migrations/1677501108379-CreateChatTable';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { Chat } from '@Chat/adapters/entities/chat.entity';
+import { CreateChatTable1677501108379 } from '@Migrations/1677501108379-CreateChatTable';
 
 export const ormConfig: DataSourceOptions = {
   type: 'postgres',
