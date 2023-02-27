@@ -15,6 +15,7 @@ export class GetUserUseCase implements GetUser {
     if (!user) {
       throw new NotFoundException(`Cannot find user with id ${id}`);
     }
-    return user;
+    const { password, ...userData } = user;
+    return userData;
   }
 }

@@ -21,7 +21,7 @@ export class PostgresUserRepository implements UserRepository {
     };
 
     const newUser = this.repo.create(user);
-    await this.repo.create(newUser);
+    await this.repo.save(newUser);
     return;
   }
 
