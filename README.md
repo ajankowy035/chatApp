@@ -14,7 +14,7 @@ $ yarn install
 
 ```bash
 # run database
-$ make run-dev locally
+$ make run-dev
 ```
 
 ## Running the app
