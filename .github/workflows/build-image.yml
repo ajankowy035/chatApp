@@ -1,0 +1,13 @@
+name: Build docker image
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build image
+        run: docker build . --file Dockerfile --tag chatApp:$(date +%s)
+        env:
+          PORT: $PORT
