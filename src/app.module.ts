@@ -1,3 +1,4 @@
+import { EventsModule } from './websocket/adapters/events.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -15,6 +16,7 @@ import { AppService } from './app.service';
     TypeOrmModule.forRoot(ormConfig),
     HealthModule,
     ChatModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
