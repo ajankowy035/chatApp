@@ -6,9 +6,14 @@ import { ChatRepository } from '../../domain/ports/chatRepository.port';
 export class InMemoryChatRepository implements ChatRepository {
   data: Chat[] = [];
 
-  create({ email, content }: CreateChatModel): Promise<ChatModel> {
+  create({
+    content,
+    fromUserId,
+    toUserId,
+  }: CreateChatModel): Promise<ChatModel> {
     const newChat: Chat = {
-      email,
+      fromUserId,
+      toUserId,
       content,
       createdAt: new Date(),
       id: Math.random() * 123242673,

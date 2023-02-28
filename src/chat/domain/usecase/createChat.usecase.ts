@@ -10,7 +10,11 @@ export class CreateMessageUseCase implements CreateMessage {
     @Inject(ChatRepository)
     private readonly chatRepo: ChatRepository,
   ) {}
-  create({ content, email }: CreateChatModel): Promise<ChatModel> {
-    return this.chatRepo.create({ content, email });
+  create({
+    content,
+    fromUserId,
+    toUserId,
+  }: CreateChatModel): Promise<ChatModel> {
+    return this.chatRepo.create({ content, fromUserId, toUserId });
   }
 }
