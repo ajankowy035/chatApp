@@ -50,5 +50,13 @@ export class CreateUserColumnsChatTable1677576652220
     await queryRunner.query(`DROP INDEX IF EXISTS toUserId_idx;`);
 
     await queryRunner.dropColumns('chat', ['fromUserId', 'toUserId']);
+
+    await queryRunner.addColumn(
+      'chat',
+      new TableColumn({
+        name: 'email',
+        type: 'string',
+      }),
+    );
   }
 }
