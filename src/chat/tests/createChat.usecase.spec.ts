@@ -12,14 +12,17 @@ describe('Add new subjects to group', () => {
 
   test('User can create a message', async () => {
     const content = 'message text';
-    const email = 'email@email.com';
+    const fromUserId = 1;
+    const toUserId = 2;
 
     const newMessage = await createMessage.create({
       content,
-      email,
+      toUserId,
+      fromUserId,
     });
 
-    expect(newMessage.email).toBe(email);
+    expect(newMessage.fromUserId).toBe(fromUserId);
+    expect(newMessage.toUserId).toBe(toUserId);
     expect(newMessage.content).toBe(content);
     expect(newMessage.id).toBeDefined();
     expect(newMessage.createdAt).toBeDefined();

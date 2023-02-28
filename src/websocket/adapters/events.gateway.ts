@@ -11,7 +11,7 @@ import { Logger } from '@nestjs/common';
 import { CreateMessage } from '@Chat/domain/ports/createMessage.port';
 import { CreateChatModel } from '@Chat/domain/models/createChat.model';
 
-@WebSocketGateway()
+@WebSocketGateway({ cors: '*:*' })
 export class EventsGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
@@ -28,7 +28,6 @@ export class EventsGateway
     await this.createMessage.create(payload);
     client.emit('newMessage', payload);
   }
-
   afterInit(server: Server) {
     this.logger.log('Websocket server initialized');
   }

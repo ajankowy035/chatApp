@@ -11,9 +11,14 @@ export class PostgresChatRepository implements ChatRepository {
     private readonly repo: Repository<Chat>,
   ) {}
 
-  create({ email, content }: CreateChatModel): Promise<ChatModel> {
+  create({
+    content,
+    fromUserId,
+    toUserId,
+  }: CreateChatModel): Promise<ChatModel> {
     const chat = {
-      email,
+      fromUserId,
+      toUserId,
       content,
       createdAt: new Date(),
     };

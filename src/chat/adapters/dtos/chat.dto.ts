@@ -1,3 +1,4 @@
+import { UserModel } from '@Users/domain/models/user.model';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class ChatDto {
@@ -11,5 +12,8 @@ export class ChatDto {
   createdAt: Date;
 
   @ApiProperty()
-  email: string;
+  fromUserId: number;
+
+  @ApiProperty()
+  toUserId: number;
 }

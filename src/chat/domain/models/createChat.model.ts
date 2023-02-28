@@ -1,4 +1,5 @@
 export class CreateChatModel {
-  email: string;
   content: string;
+  fromUserId: number;
+  toUserId: number;
 }
